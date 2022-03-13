@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Assigner</title>
+</head>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <h1>Gift Assigner</h1>
+    <p>Ever wish you could assign people to give gifts more easily? Look no further!</p>
+    <p>Simply enter in the names of everyone you want to have part of this and click the assign button!</p>
+
+    <!--Button to add someone-->
+    <button onclick="AddPerson()">Add Person</button>
+    <input type="text" id="newPerson">
+
+    <table id="personTable">
+        <tr>
+            <td><b>Person   </b></td>
+            <td><b>Giftee   </b></td>
+        </tr>
+    </table>
+    
+    <br>
+    <button onclick="AssignEveryone()">Assign!</button>
+    
+</body>
+
+<script>
+    var personList = [];
+
+    function AddPerson() {
+        let newPerson = document.getElementById("newPerson").value;
+        personList.push(newPerson);
+        let totalOutput = "<tr> <td><b>Person</b></td> <tr> <td><b>Giftee</b></td>";
+        for (let i = 0; i < personList.length; i++) {
+            totalOutput = totalOutput.concat("<td>" + personList[i] + "<td><td></td>");
+            console.log(personList[i]);
+        }
+        let randomVar = "Hi!!!";
+        document.getElementById("personTable") = randomVar;
+    }
+
+</script>
+
+</html>
